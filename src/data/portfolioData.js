@@ -10,12 +10,12 @@ export const profile = {
   github: "https://github.com/Srinath64312",
   linkedin: "https://www.linkedin.com/in/srinath-konda-venkata-096ab940a",
   email: "kondavenkatasrinath64312@gmail.com",
-  resumePath: "/resume.pdf",
+  resumePath: "/resume.pdf.placeholder",
 };
 
 export const about = {
   paragraphs: [
-    "[Add 1–2 sentences about your background — e.g. what you're studying and what pulled you toward it.]",
+    "I am currently pursuing my B.Tech in Computer Science and Engineering at KLH Aziznagar (2025–2029), with a strong passion for software engineering, full-stack web development, and intelligent systems.",
     "I'm currently focused on intelligent systems — using LLMs and reinforcement learning to build adaptive, personalized tools — alongside hands-on work in web development.",
   ],
   interests: [
