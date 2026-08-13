@@ -18,21 +18,26 @@ export default function Cursor() {
     }
 
     const isClickable = (el) => {
-      while (el && el !== document.body) {
-        const tag = el.tagName;
-        if (["A", "BUTTON", "INPUT", "TEXTAREA", "SELECT"].includes(tag)) return true;
-        if (
-          el.classList &&
-          (el.classList.contains("glass") ||
-            el.classList.contains("btn") ||
-            el.classList.contains("tech-tile") ||
-            el.classList.contains("projects__card") ||
-            el.classList.contains("cert-card") ||
-            el.classList.contains("nav-link"))
-        ) {
-          return true;
+      try {
+        while (el && el !== document.body) {
+          const tag = el.tagName;
+          if (tag && ["A", "BUTTON", "INPUT", "TEXTAREA", "SELECT"].includes(tag)) return true;
+          if (
+            el.classList &&
+            typeof el.classList.contains === "function" &&
+            (el.classList.contains("glass") ||
+              el.classList.contains("btn") ||
+              el.classList.contains("tech-tile") ||
+              el.classList.contains("projects__card") ||
+              el.classList.contains("cert-card") ||
+              el.classList.contains("nav-link"))
+          ) {
+            return true;
+          }
+          el = el.parentElement;
         }
-        el = el.parentElement;
+      } catch (err) {
+        console.error(err);
       }
       return false;
     };
