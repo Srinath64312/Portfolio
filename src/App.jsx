@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
-import Splash from "./components/Splash";
 import Cursor from "./components/Cursor";
 import Rail from "./components/Rail";
 import Navbar from "./components/Navbar";
@@ -18,7 +17,6 @@ import ToTop from "./components/ToTop";
 export default function App() {
   return (
     <ThemeProvider>
-      <Splash />
       <Cursor />
       <Rail />
       <Navbar />
