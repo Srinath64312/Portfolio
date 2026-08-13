@@ -10,7 +10,7 @@ export const profile = {
   github: "https://github.com/Srinath64312",
   linkedin: "https://www.linkedin.com/in/srinath-konda-venkata-096ab940a",
   email: "kondavenkatasrinath64312@gmail.com",
-  resumePath: "/resume.pdf.placeholder",
+  resumePath: "/resume.pdf",
 };
 
 export const about = {
