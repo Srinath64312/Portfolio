@@ -47,10 +47,10 @@ export default function Cursor() {
     const onMove = (e) => {
       const x = e.clientX;
       const y = e.clientY;
-      inner.style.left = `${x}px`;
-      inner.style.top = `${y}px`;
-
-      outer.animate({ left: `${x}px`, top: `${y}px` }, { duration: 400, fill: "forwards" });
+      
+      // Use performant translate3d instead of left/top & animate()
+      inner.style.transform = `translate3d(${x}px, ${y}px, 0) translate3d(-50%, -50%, 0)`;
+      outer.style.transform = `translate3d(${x}px, ${y}px, 0) translate3d(-50%, -50%, 0)`;
 
       if (!revealed) {
         revealed = true;

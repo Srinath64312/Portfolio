@@ -12,13 +12,11 @@ body.cursor-shown textarea {
 .cursor-inner,
 .cursor-outer {
   position: fixed;
-  top: -100px;
-  left: -100px;
+  top: 0;
+  left: 0;
   pointer-events: none;
   border-radius: 50%;
   z-index: 999999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
   display: none;
 }
 
@@ -32,10 +30,13 @@ body.cursor-shown .cursor-outer {
   height: 8px;
   background: var(--accent-2, #0ea5e9);
   box-shadow: 0 0 10px var(--accent-2, #0ea5e9);
+  /* instant inner dot */
+  transition: width 0.2s, height 0.2s, background 0.2s;
 }
 
 .cursor-inner.hover {
-  transform: translate(-50%, -50%) scale(2.5);
+  width: 20px;
+  height: 20px;
   background: var(--accent-1, #6366f1);
   box-shadow: 0 0 14px var(--accent-1, #6366f1);
 }
@@ -45,10 +46,13 @@ body.cursor-shown .cursor-outer {
   height: 36px;
   border: 1.5px solid rgba(99, 102, 241, 0.4);
   background: rgba(99, 102, 241, 0.03);
+  /* trailing lag using CSS transition */
+  transition: transform 0.08s cubic-bezier(0.25, 1, 0.5, 1), width 0.2s, height 0.2s, background 0.2s, border-color 0.2s;
 }
 
 .cursor-outer.hover {
-  transform: translate(-50%, -50%) scale(1.6);
+  width: 56px;
+  height: 56px;
   border-color: rgba(14, 165, 233, 0.8);
   background: rgba(14, 165, 233, 0.08);
 }
