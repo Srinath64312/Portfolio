@@ -16,11 +16,9 @@ import Footer from "./components/Footer";
 import ToTop from "./components/ToTop";
 
 export default function App() {
-  const [booted, setBooted] = useState(false);
-
   return (
     <ThemeProvider>
-      {!booted && <Splash onComplete={() => setBooted(true)} />}
+      <Splash />
       <Cursor />
       <Rail />
       <Navbar />

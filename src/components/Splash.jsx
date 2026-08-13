@@ -33,7 +33,7 @@ export default function Splash({ onComplete }) {
         setTimeout(() => {
           if (!cancelled) {
             setDone(true);
-            setTimeout(onComplete, 400);
+            if (onComplete) onComplete();
           }
         }, 500);
         return;
@@ -52,7 +52,7 @@ export default function Splash({ onComplete }) {
       if (cancelled || done) return;
       setLines(BOOT_LINES);
       setDone(true);
-      setTimeout(onComplete, 150);
+      if (onComplete) setTimeout(onComplete, 150);
     };
 
     window.addEventListener("keydown", handleSkip);
@@ -63,7 +63,7 @@ export default function Splash({ onComplete }) {
       window.removeEventListener("keydown", handleSkip);
       window.removeEventListener("click", handleSkip);
     };
-  }, [onComplete, done]);
+  }, []);
 
   return (
     <div className={`splash ${done ? "splash--exit" : ""}`} aria-hidden="true">
