@@ -1,0 +1,121 @@
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: radial-gradient(1200px 800px at 50% 50%, #0d0e14 0%, #050508 60%, #020204 100%);
+  color: #ece4d0;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  user-select: none;
+}
+
+.splash--exit {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.splash__boot {
+  width: min(720px, 92vw);
+  padding: 32px 0 0 32px;
+}
+
+.splash__log {
+  font-size: 13.5px;
+  line-height: 1.75;
+}
+
+.splash__line {
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-word;
+  animation: bootIn 0.16s ease both;
+}
+
+.splash__line--sp {
+  height: 0.9em;
+}
+
+.splash__line--head {
+  color: #ece4d0;
+  letter-spacing: 0.02em;
+  margin-bottom: 2px;
+}
+
+.splash__line--head .v {
+  color: var(--accent-2, #0ea5e9);
+}
+
+.b-br {
+  color: rgba(236, 228, 208, 0.35);
+  margin-right: 8px;
+}
+
+.b-ok {
+  color: #10b981;
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+}
+
+.b-k {
+  color: rgba(236, 228, 208, 0.4);
+}
+
+.b-msg {
+  color: rgba(236, 228, 208, 0.85);
+}
+
+.b-run {
+  color: #6366f1;
+  font-weight: 500;
+}
+
+.b-run::after {
+  content: "";
+  animation: spDots 1s steps(4, end) infinite;
+}
+
+.splash__caret {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  margin-left: 4px;
+  background: #6366f1;
+  vertical-align: -2px;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.6);
+  animation: spBlink 1s steps(1) infinite;
+}
+
+.splash__skip {
+  margin-top: 24px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(236, 228, 208, 0.35);
+}
+
+@keyframes bootIn {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes spBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes spDots {
+  0% { content: ""; }
+  25% { content: "."; }
+  50% { content: ".."; }
+  75% { content: "..."; }
+}

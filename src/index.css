@@ -16,9 +16,9 @@
   --radius-md: 16px;
   --radius-sm: 10px;
   --shadow-glow: 0 8px 40px rgba(99, 102, 241, 0.25);
-  --font-display: "Outfit", sans-serif;
+  --font-display: "Space Grotesk", "Outfit", sans-serif;
   --font-body: "Geist", -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --nav-h: 80px;
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   color-scheme: dark;

@@ -1,51 +1,54 @@
-.skills__grid {
+.skills__wall {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
 }
 
-.skills__card {
-  padding: 26px;
-}
-
-.skills__card-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--accent-2);
-  margin-bottom: 16px;
-}
-
-.skills__card-header h3 {
-  font-size: 1.02rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.skills__list {
+.tech-tile {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  gap: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
 }
 
-.skills__list li {
+.tech-tile__icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s var(--ease);
+}
+
+.tech-tile__icon img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+.tech-tile__name {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
   color: var(--text-secondary);
-  font-size: 0.92rem;
-  padding-left: 16px;
-  position: relative;
+  transition: color 0.3s var(--ease);
 }
 
-.skills__list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 9px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent-gradient);
+.tech-tile:hover {
+  transform: translateY(-6px) scale(1.04);
+  border-color: rgba(14, 165, 233, 0.4);
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.15);
 }
 
-.skills__card:hover .skills__card-header {
-  transform: none;
+.tech-tile:hover .tech-tile__icon {
+  transform: scale(1.15) rotate(4deg);
+}
+
+.tech-tile:hover .tech-tile__name {
+  color: var(--text-primary);
 }

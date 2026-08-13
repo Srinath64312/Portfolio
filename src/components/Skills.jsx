@@ -1,17 +1,25 @@
-import {
-  FiCode, FiGlobe, FiDatabase, FiTool, FiCpu,
-} from "react-icons/fi";
 import { useReveal } from "../hooks/useReveal";
-import { skills } from "../data/portfolioData";
 import "./Skills.css";
 
-const CATEGORY_ICON = {
-  Programming: FiCode,
-  "Web Development": FiGlobe,
-  Database: FiDatabase,
-  Tools: FiTool,
-  "AI / ML": FiCpu,
-};
+const TECH_WALL = [
+  { id: "py", name: "Python", icon: "python", color: "3776AB" },
+  { id: "jv", name: "Java", icon: "logos:java", color: "" },
+  { id: "js", name: "JavaScript", icon: "javascript", color: "F7DF1E" },
+  { id: "react", name: "React", icon: "react", color: "61DAFB" },
+  { id: "html", name: "HTML5", icon: "html5", color: "E34F26" },
+  { id: "css", name: "CSS3", icon: "css3", color: "1572B6" },
+  { id: "sql", name: "SQL", icon: "sqlite", color: "003B57" },
+  { id: "postgres", name: "PostgreSQL", icon: "postgresql", color: "4169E1" },
+  { id: "git", name: "Git", icon: "git", color: "F05032" },
+  { id: "github", name: "GitHub", icon: "github", color: "ffffff" },
+  { id: "vscode", name: "VS Code", icon: "visualstudiocode", color: "007ACC" },
+  { id: "ml", name: "Machine Learning", icon: "scikitlearn", color: "F7931E" },
+];
+
+const getIconUrl = (t) =>
+  t.icon.includes(":")
+    ? `https://api.iconify.design/${t.icon}.svg`
+    : `https://api.iconify.design/simple-icons:${t.icon}.svg?color=%23${t.color}`;
 
 export default function Skills() {
   const ref = useReveal();
@@ -19,30 +27,22 @@ export default function Skills() {
   return (
     <section id="skills" className="section skills" ref={ref}>
       <div className="container">
-        <p className="eyebrow reveal">Skills</p>
-        <h2 className="section-title reveal">What I work with</h2>
+        <p className="eyebrow reveal">03 / Tech Stack</p>
+        <h2 className="section-title reveal">The toolbox & technologies</h2>
 
-        <div className="skills__grid">
-          {skills.map((group, i) => {
-            const Icon = CATEGORY_ICON[group.category] || FiCode;
-            return (
-              <div
-                key={group.category}
-                className="skills__card glass reveal"
-                style={{ transitionDelay: `${i * 0.06}s` }}
-              >
-                <div className="skills__card-header">
-                  <Icon size={20} />
-                  <h3>{group.category}</h3>
-                </div>
-                <ul className="skills__list">
-                  {group.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+        <div className="skills__wall">
+          {TECH_WALL.map((tech, i) => (
+            <div
+              key={tech.id}
+              className="tech-tile glass reveal"
+              style={{ transitionDelay: `${(i % 4) * 0.06}s` }}
+            >
+              <div className="tech-tile__icon">
+                <img src={getIconUrl(tech)} alt={tech.name} loading="lazy" />
               </div>
-            );
-          })}
+              <span className="tech-tile__name">{tech.name}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
