@@ -1,0 +1,52 @@
+.certifications__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 40px;
+  color: var(--text-muted);
+  max-width: 420px;
+}
+
+.certifications__empty svg {
+  color: var(--accent-2);
+}
+
+.certifications__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.certifications__card {
+  padding: 24px;
+}
+
+.certifications__icon {
+  color: var(--accent-2);
+  margin-bottom: 14px;
+}
+
+.certifications__card h3 {
+  font-size: 1.02rem;
+  margin-bottom: 6px;
+}
+
+.certifications__org {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.certifications__date {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  margin-bottom: 12px;
+}
+
+.certifications__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--accent-2);
+}

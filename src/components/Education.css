@@ -1,0 +1,34 @@
+.education__timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 720px;
+}
+
+.education__item {
+  padding: 28px 30px;
+  border-left: 2px solid transparent;
+  border-image: var(--accent-gradient) 1;
+}
+
+.education__years {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-2);
+}
+
+.education__item h3 {
+  font-size: 1.15rem;
+  margin: 8px 0 4px;
+}
+
+.education__institution {
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.education__coursework {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}

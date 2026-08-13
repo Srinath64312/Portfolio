@@ -1,0 +1,73 @@
+.github__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.github__card {
+  display: block;
+  padding: 24px;
+}
+
+.github__card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.github__card-head h3 {
+  font-size: 1rem;
+  font-family: var(--font-mono);
+}
+
+.github__card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  min-height: 1.6em;
+}
+
+.github__meta {
+  display: flex;
+  gap: 14px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.github__stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.github__card--skeleton {
+  height: 140px;
+  background: linear-gradient(90deg, var(--panel) 25%, var(--panel-strong) 50%, var(--panel) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.github__state {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 40px;
+  max-width: 460px;
+  color: var(--text-muted);
+}
+
+.github__state svg {
+  color: var(--accent-2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .github__card--skeleton { animation: none; }
+}
